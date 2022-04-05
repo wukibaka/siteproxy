@@ -9,7 +9,7 @@ let config = {
     httpprefix: 'https', port: 443,
     serverName: 'siteproxy-233.vercel.app',
 }
-let blockedSites = ['google','wikipedia','github','bing','twitter','yahoo'] // accessing to chase.com was reported by google
+let blockedSites = ['google','wikipedia','wikimedia','wikisource','wikinews','wiktionary','github','bing','twitter','yahoo'] // accessing to chase.com was reported by google
 
 if (process.env.herokuAddr) {
     config.serverName = process.env.herokuAddr
