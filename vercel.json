@@ -5,5 +5,11 @@
       "src": "./index.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/favicon.png",
+      "dest": "/favicon.png"
+    }
   ]
 }
