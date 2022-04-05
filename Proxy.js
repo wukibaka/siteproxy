@@ -509,7 +509,7 @@ let Proxy = ({ProxyMiddleware, blockedSites, urlModify, httpprefix, serverName, 
         let {host, httpType} = getHostFromReq({req, serverName})
         for (let i=0; i<blockedSites.length; i++) {
             let site = blockedSites[i]
-            if (site === host) {
+            if (site != host) {
                 redirect2HomePage({res, httpprefix, serverName,})
                 return
             }
