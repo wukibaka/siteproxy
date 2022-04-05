@@ -507,12 +507,16 @@ let Proxy = ({ProxyMiddleware, blockedSites, urlModify, httpprefix, serverName, 
         let fwdStr = req.headers['X-Forwarded-For'] || req.headers['x-forwarded-for']
 
         let {host, httpType} = getHostFromReq({req, serverName})
+        let shouldRedirect = true
         for (let i=0; i<blockedSites.length; i++) {
             let site = blockedSites[i]
-            if (site != host) {
-                redirect2HomePage({res, httpprefix, serverName,})
-                return
+            if (site === host) {
+                shouldRedirect = false
             }
+        }
+        if (shouldRedirect){
+            redirect2HomePage({res, httpprefix, serverName,})
+            return
         }
         let timestr = new Date().toISOString()
         console.log(`route:${fwdStr}, httpType:${httpType}, host:${host}`)
