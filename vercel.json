@@ -6,10 +6,14 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+   "routes": [
     {
       "src": "/favicon.png",
-      "dest": "/favicon.png"
+      "dest": "./favicon.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
