@@ -510,7 +510,7 @@ let Proxy = ({ProxyMiddleware, blockedSites, urlModify, httpprefix, serverName, 
         let shouldRedirect = true
         for (let i=0; i<blockedSites.length; i++) {
             let site = blockedSites[i]
-            if (site === host) {
+            if (host.includes(site)) {
                 shouldRedirect = false
             }
         }
